@@ -4,7 +4,7 @@
   "description": "Common GUI actions and objects, standardized and simplified for constructing jQ UI widget instances",
   "main": "index.js",
   "scripts": {
-    "test": "testem"
+    "test": ""
   },
   "repository": {
     "type": "git",

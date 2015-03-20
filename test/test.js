@@ -107,7 +107,7 @@ describe('button interface', function() {
 
 describe('dialog interface', function() {
     afterEach(function() {
-        $dia.dialog("destroy");
+        // $dia.dialog("destroy");
     });
 
     it('should not generate dialog without options, without body', function() {
@@ -151,9 +151,7 @@ describe('dialog interface', function() {
 });
 
 describe('dialog using button interface', function() {
-    it('should support close', function() {
-
-    });
+    it('should support close');
     it('should support delete');
     it('should support closeDialog');
 });
