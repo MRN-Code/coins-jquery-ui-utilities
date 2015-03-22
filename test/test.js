@@ -107,7 +107,9 @@ describe('button interface', function() {
 
 describe('dialog interface', function() {
     afterEach(function() {
-        // $dia.dialog("destroy");
+        if ($dia && $dia.length) {
+            $dia.dialog("destroy");
+        }
     });
 
     it('should not generate dialog without options, without body', function() {
@@ -137,22 +139,71 @@ describe('dialog interface', function() {
     it('should generate dialog, default close button', function(done) {
         var title, body;
         $dia = jquu.dialog.base({
-            title: 'testDialog',
-            body: 'testBody'
+            body: 'closeTestBody'
         });
         title = document.querySelector('.ui-dialog-title');
-        title.innerHTML.should.be.equal('testDialog');
+        title.innerHTML.should.be.equal('COINS Message');
 
-        title = document.querySelector('.ui-dialog-content');
-        title.innerHTML.should.be.equal('testBody');
+        body = document.querySelector('.ui-dialog-content');
+        body.innerHTML.should.be.equal('closeTestBody');
 
         done();
     });
 });
 
 describe('dialog using button interface', function() {
-    it('should support close');
-    it('should support delete');
-    it('should support closeDialog');
-});
+    it('should support close', function() {
+        var $btn, body;
+        window.$dia =  $dia = jquu.dialog.base({
+            body: 'closeTestBody'
+        });
 
+        $btn = $dia.parent().find('button');
+        ($btn.length === 2).should.be.ok; // jshint ignore:line
+
+        body = document.querySelector('.ui-dialog-content');
+        body.innerHTML.should.be.equal('closeTestBody');
+
+        $btn.click();
+
+        jQuery(body).is(':visible').should.not.be.ok;  // jshint ignore:line
+
+    });
+
+    it('should support delete', function(done) {
+        var $btn,
+            body,
+            clickedArr = [];
+        window.$dia =  $dia = jquu.dialog.base({
+            body: 'closeTestBody',
+            buttons: [
+                jquu.button.delete({
+                    click: function() {
+                        clickedArr.push('delete');
+                    }
+                }),
+                jquu.button.base({
+                    text: 'random',
+                    click: function() {
+                        clickedArr.push('random');
+                    }
+                })
+            ]
+        });
+
+        $btn = $dia.parent().find('button');
+        ($btn.length === 3).should.be.ok;  // jshint ignore:line
+
+        jQuery($btn[1]).click();
+        jQuery($btn[2]).click();
+
+        clickedArr.should.containEql['delete'];  // jshint ignore:line
+        clickedArr.should.containEql['random'];  // jshint ignore:line
+
+        done();
+    });
+
+    it('should enable modal mode by default', function() {
+        document.querySelector('.ui-widget-overlay').should.be.ok; // jshint ignore:line
+    });
+});
