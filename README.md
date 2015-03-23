@@ -1,4 +1,6 @@
 # coins-jquery-ui-utilities
+[ ![Codeship Status for MRN-Code/coins-jquery-ui-utilities](https://codeship.com/projects/54633760-b3c2-0132-9665-2aa0bd32b09d/status?branch=master)](https://codeship.com/projects/70312)
+
 Common GUI actions and objects, standardized and simplified for constructing jQ UI widget instances
 
 ## why
