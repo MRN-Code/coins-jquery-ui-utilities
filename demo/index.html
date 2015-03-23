@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>jquu - coins jquery-ui utilities</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap-jquery-ui-mod.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/jquery-bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/bundle.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">coins-jquery-ui-utility-demo</a>
+        </div>
+       <!--  <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div> .navbar-collapse --> -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Let's make some widgets!</h1>
+        <p>
+            The following examples present common usages of the coins-jquery-ui-utility library.
+        </p>
+        <a class="btn btn-primary btn-lg"
+            href="https://github.com/MRN-Code/coins-jquery-ui-utilities.git"
+            target="blank"
+            role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Buttons</h2>
+          <p>
+              <p>
+                Common bootstrappy buttons.  Note how an `el` is passed.  Without an `el`, just the configuration object is returned.
+              </p>
+              <code>
+                    // with `el`
+                    jquu.button.base({class: 'default',  el: document.getElementById('button-b1') });<br>
+                    jquu.button.base({class: 'danger',  el: document.getElementById('button-b2') });<br>
+                    jquu.button.base({class: 'info',  el: document.getElementById('button-b3') });<br>
+                    jquu.button.base({class: 'primary',  el: document.getElementById('button-b4') });<br>
+                    jquu.button.base({class: 'success',  el: document.getElementById('button-b5') });<br>
+                    jquu.button.base({class: 'warning',  el: document.getElementById('button-b6') });<br>
+                    <br>
+                    // with no `el`<br>
+                    jquu.button.base({class: 'default'});<br>
+              </code>
+          </p>
+          <p>
+              <div class="well">
+                  <h5>// with `el`</h5>
+                  <button id="button-b1" type="button">default</button>
+                  <button id="button-b2" type="button">danger</button>
+                  <button id="button-b3" type="button">info</button>
+                  <button id="button-b4" type="button">primary</button>
+                  <button id="button-b5" type="button">success</button>
+                  <button id="button-b6" type="button">warning</button>
+
+                  <br><br>
+                  <h5>// with no `el`, obj returned</h5>
+                  <pre id="btn-obj">
+{
+  "class": "btn-default button-default ui-button-default",
+  "click": function () {...}
+}</pre>
+              </div>
+          </p>
+            <script>
+                // `'default'`, `'danger'`, `'info'`, `'primary'`, `'success'`, `'warning'`
+                jquu.button.base({class: 'default',  el: document.getElementById('button-b1') });
+                jquu.button.base({class: 'danger',  el: document.getElementById('button-b2') });
+                jquu.button.base({class: 'info',  el: document.getElementById('button-b3') });
+                jquu.button.base({class: 'primary',  el: document.getElementById('button-b4') });
+                jquu.button.base({class: 'success',  el: document.getElementById('button-b5') });
+                jquu.button.base({class: 'warning',  el: document.getElementById('button-b6') });
+
+                var btnConfigObjExample = jquu.button.base({class: 'default'});
+            </script>
+        </div>
+
+        <div class="col-md-4">
+          <h2>Dialog</h2>
+            <p>
+              <p>
+                Predefined common dialogs are ready to go.  Shebam!
+              </p>
+              <code>
+                    // Default dialog, with close.  errors without body<br>
+                    jquu.dialog.base({body: 'test'});<br>
+                    <br>
+                    // Fail dialog, with close.  errors without body<br>
+                    jquu.dialog.fail({body: 'bummer'});<br>
+                    <br>
+                    // Extend dialog buttons<br>
+                    jquu.dialog.fail({body: 'bummer', title: 'custom title', buttons: [ jquu.button.base({class: 'success', text: 'button'}) ]});<br>
+              </code>
+          </p>
+            <div class="well">
+                <button role="button"
+                    onclick="jquu.dialog.base({body: 'test'});"
+                    class="btn-info button-info ui-button-info dia">Default</button>
+                <button role="button"
+                    onclick="jquu.dialog.fail({body: 'bummer'});"
+                    class="btn-danger button-danger ui-button-danger dia">Fail</button>
+                <button role="button"
+                    onclick="jquu.dialog.fail({body: 'bummer', title: 'custom title', buttons: [ jquu.button.base({class: 'success', text: 'customText' }) ]});"
+                    class="btn-success button-success ui-button-success dia">Custom Attrs</button>
+            </div>
+            <script>
+                jQuery('.dia').button();
+            </script>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>MIT Licensed Software.  Use freely, compliments of <a href="http://coins.mrn.org/" target="blank">COINS</a></p>
+      </footer>
+    </div> <!-- /container -->
+    </body>
+</html>

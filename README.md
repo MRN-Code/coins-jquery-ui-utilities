@@ -42,13 +42,8 @@ This module expects that you have:
 
 This is a dated means of dependency management, however, until all COINS tools migrate to a FE DI system, it it shall suffice.
 
+## demo
+run `npm run demo` and open the posted url!  `demo/index.html` should load with some helpful examples.
+
 ## todo
 1. Publish ApiError and require in for dialog def
-
-BEFORE PUBLISH
-tidy up dialog
-document dialog
-build process
-demo
-test
-commit hook
