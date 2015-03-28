@@ -31,6 +31,9 @@ All button constructors below utilize `base`.  Can be used directly with above c
 #### close
 Sugar for a button titled "Close" that will attempt to close a *Dialog* instance on click.
 
+#### destroy
+Sugar for a button titled "Close" that will attempt to destroy a *Dialog* instance on click.
+
 #### delete
 Sugar for a red button titled "Delete" that ensures that a `click` or `action` attr is defined.
 
@@ -39,7 +42,7 @@ Sugar for a red button titled "Delete" that ensures that a `click` or `action` a
 All dialog functions accept the options hash, and most provide some helpful defaults.  Apply any dialog options usually fed the jQuery dialog API to the options hash.  Additional actions supported are:
 
 #### base
-All dialog constructors below utilize `base`.  Can be used directly with above configurations as needed.
+All dialog constructors below utilize `base`.  Can be used directly with above configurations as needed.  Close buttons in the button pane destroy the dialog by default.
 
 #### fail
 Generates a dialog with a default title of `"Operation Failed"`, a friendly error message, and a red close button.
@@ -56,6 +59,9 @@ This is a dated means of dependency management, however, until all COINS tools m
 
 ## demo
 run `npm run demo` and open the posted url!  `demo/index.html` should load with some helpful examples.
+
+## changelog
+- 1.1.0 - Added destroy button and default dialog closing to destroy
 
 ## todo
 1. Formally deprecate ApiError
