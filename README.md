@@ -61,6 +61,7 @@ This is a dated means of dependency management, however, until all COINS tools m
 run `npm run demo` and open the posted url!  `demo/index.html` should load with some helpful examples.
 
 ## changelog
+- 1.1.1 - Force close handlers before destroy
 - 1.1.0 - Added destroy button and default dialog closing to destroy
 
 ## todo
