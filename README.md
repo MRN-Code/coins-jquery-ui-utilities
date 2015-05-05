@@ -17,6 +17,7 @@ All button functions accept the options hash, and most provide some helpful defa
 - `el` [Element] - element to buttonize.  If no element provided, the button config (see `returnConfig`) is returned by default
 - `returnConfig` [boolean] - return the button configuration object, vs the button instance
 - `closeDialog` [booean] (default: `false`) - If button is fed to a dialog, `buttons: []` array, the button will close the dialog after any `click` function has executed, and after any `action` function(s) have executed.  This will auto-enable click regardless if no `click` is defined.
+- `destroyDialog` [boolean] (default: `false`) - See `closeDialog`, but destroys widget instance
 - `action` [Function | [Function]] - additional action function(s) to be performed on button click.  This will auto-enable click regardless if no `click` is defined.  All actions are run synchronously.
 
 #### btnClasses
