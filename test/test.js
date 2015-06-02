@@ -152,7 +152,17 @@ describe('dialog interface', function() {
 });
 
 describe('dialog using button interface', function() {
-    it('should support close', function() {
+    afterEach(function() {
+        try {
+            if ($dia && $dia.length ) {
+                $dia.dialog("destroy");
+            }
+        } catch (err) {
+            // pass
+        }
+    });
+
+    it('should support close', function(done) {
         var $btn, body;
         window.$dia =  $dia = jquu.dialog.base({
             body: 'closeTestBody'
@@ -168,6 +178,7 @@ describe('dialog using button interface', function() {
 
         jQuery(body).is(':visible').should.not.be.ok;  // jshint ignore:line
 
+        done();
     });
 
     it('should support delete', function(done) {
@@ -203,7 +214,11 @@ describe('dialog using button interface', function() {
         done();
     });
 
-    it('should enable modal mode by default', function() {
+    it('should enable modal mode by default', function(done) {
+        $dia = jquu.dialog.base({
+            body: 'closeTestBody'
+        });
         document.querySelector('.ui-widget-overlay').should.be.ok; // jshint ignore:line
+        done();
     });
 });

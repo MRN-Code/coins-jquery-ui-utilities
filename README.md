@@ -51,17 +51,13 @@ Generates a dialog with a default title of `"Operation Failed"`, a friendly erro
 #### api
 [Deprecated] Passed an api error, builds a `fail` dialog with details from the failed API call.  Not recommended for use.
 
-## requirements
-This module expects that you have:
-    1. underscore or lodash loaded globally
-    1. jquery && jQuery UI loaded globally
-
 This is a dated means of dependency management, however, until all COINS tools migrate to a FE DI system, it shall suffice.
 
 ## demo
 run `npm run demo` and open the posted url!  `demo/index.html` should load with some helpful examples.
 
 ## changelog
+- 2.0.0 - `require` jquery and lodash individually. only consumed lodash fns are required into bundle
 - 1.1.1 - Force close handlers before destroy
 - 1.1.0 - Added destroy button and default dialog closing to destroy
 
