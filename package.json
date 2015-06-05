@@ -1,6 +1,6 @@
 {
   "name": "coins-jquery-ui-utilities",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Common GUI actions and objects, standardized and simplified for constructing jQ UI widget instances",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,6 @@
     "browserify": "^9.0.3",
     "gulp": "^3.8.11",
     "gulp-git": "^1.1.0",
-    "jquery-ui": "1.10.5",
     "mocha": "^2.2.1",
     "pre-commit": "^1.0.6",
     "rsvp": "^3.0.17",
@@ -30,6 +29,7 @@
     "testem": "^0.7.5"
   },
   "dependencies": {
+    "jquery-ui": "^1.10.5",
     "jquery": "^2.1.4",
     "lodash": "^3.9.3"
   }

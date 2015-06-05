@@ -4,6 +4,7 @@
 
 var me = module.exports;
 var jQuery = require('jquery');
+require('jquery-ui');
 
 if (!jQuery.ui) {
     throw new Error('coins-jquery-utilities dependencies not met');
