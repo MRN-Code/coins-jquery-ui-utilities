@@ -3,15 +3,11 @@
 "use strict";
 
 var me = module.exports;
+var jQuery = require('jquery');
 
-var _ = window._;
-var jQuery = window.jQuery;
-
-if (!_ || !jQuery || !jQuery.ui) {
+if (!jQuery.ui) {
     throw new Error('coins-jquery-utilities dependencies not met');
 }
-
-var defaultOptions = {};
 
 me.button = require('./lib/button.js');
 me.dialog = require('./lib/dialog.js');
