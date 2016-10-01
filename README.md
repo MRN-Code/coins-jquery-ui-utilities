@@ -57,7 +57,7 @@ This is a dated means of dependency management, however, until all COINS tools m
 run `npm run demo` and open the posted url!  `demo/index.html` should load with some helpful examples.
 
 ## changelog
-- 2.0.1/2/3 - fulfill 2.0.0 claim
+- 2.0.1/2 - fulfill 2.0.0 claim
 - 2.0.0 - `require` jquery and lodash individually. only consumed lodash fns are required into bundle
 - 1.1.1 - Force close handlers before destroy
 - 1.1.0 - Added destroy button and default dialog closing to destroy
