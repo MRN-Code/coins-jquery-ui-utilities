@@ -1,6 +1,6 @@
 {
   "name": "coins-jquery-ui-utilities",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Common GUI actions and objects, standardized and simplified for constructing jQ UI widget instances",
   "main": "index.js",
   "scripts": {
